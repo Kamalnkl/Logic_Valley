@@ -15,6 +15,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Configure {
 
 	public static WebDriver driver;
@@ -37,6 +39,7 @@ public class Configure {
 
 		
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\kamal\\Downloads\\chromedriver_83.exe");
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		testCase.log(Status.INFO,"chrome is initialized");
 		driver.get("https://www.freshworks.com/");
