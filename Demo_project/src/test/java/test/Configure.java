@@ -60,7 +60,7 @@ public class Configure {
 	
 		try {
 			
-			String expectedtitle="A fresh approach to custome engagement";
+			String expectedtitle="A fresh approach to customer engagement";
 			String title=driver.getTitle();
 			System.out.println(title);
 			testCase.log(Status.INFO,"The Actual title is:"  +title);
