@@ -1,0 +1,8 @@
+
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="test.Configure"/>
+    </classes>
+  </test> 
+</suite> 
