@@ -99,7 +99,7 @@ public class Configure {
 			testCase.log(Status.FAIL,"Logo is NOT Displayed");
 		}
 	
-
+//
 	}
 
 	@AfterTest
