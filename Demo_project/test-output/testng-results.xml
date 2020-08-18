@@ -2,28 +2,30 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-08-16T15:35:50 IST" name="Default suite" finished-at="2020-08-16T15:36:45 IST" duration-ms="54898">
+  <suite started-at="2020-08-18T11:40:21 IST" name="Default suite" finished-at="2020-08-18T11:41:12 IST" duration-ms="51170">
     <groups>
     </groups>
-    <test started-at="2020-08-16T15:35:50 IST" name="Default test" finished-at="2020-08-16T15:36:45 IST" duration-ms="54898">
+    <test started-at="2020-08-18T11:40:21 IST" name="Default test" finished-at="2020-08-18T11:41:12 IST" duration-ms="51170">
       <class name="test.Configure">
-        <test-method is-config="true" signature="initilization()[pri:0, instance:test.Configure@2bbf180e]" started-at="2020-08-16T15:35:50 IST" name="initilization" finished-at="2020-08-16T15:36:44 IST" duration-ms="53826" status="PASS">
+        <test-method is-config="true" signature="initilization()[pri:0, instance:test.Configure@27ae2fd0]" started-at="2020-08-18T11:40:21 IST" name="initilization" finished-at="2020-08-18T11:41:10 IST" duration-ms="49771" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilization -->
-        <test-method signature="titletest()[pri:1, instance:test.Configure@2bbf180e]" started-at="2020-08-16T15:36:44 IST" name="titletest" finished-at="2020-08-16T15:36:44 IST" duration-ms="28" status="FAIL">
+        <test-method signature="titletest()[pri:1, instance:test.Configure@27ae2fd0]" started-at="2020-08-18T11:41:10 IST" name="titletest" finished-at="2020-08-18T11:41:10 IST" duration-ms="21" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- titletest -->
+        <test-method signature="logotest()[pri:2, instance:test.Configure@27ae2fd0]" started-at="2020-08-18T11:41:10 IST" name="logotest" finished-at="2020-08-18T11:41:11 IST" duration-ms="107" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [A fresh approach to customer engagement] but found [A fresh approach to ustomer engagement]]]>
+              <![CDATA[The logo is displayed did not expect to find [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [A fresh approach to customer engagement] but found [A fresh approach to ustomer engagement]
+              <![CDATA[java.lang.AssertionError: The logo is displayed did not expect to find [false] but found [true]
 at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.assertEqualsImpl(Assert.java:136)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:575)
-at org.testng.Assert.assertEquals(Assert.java:585)
-at test.Configure.titletest(Configure.java:68)
+at org.testng.Assert.failNotEquals(Assert.java:969)
+at org.testng.Assert.assertFalse(Assert.java:65)
+at test.Configure.logotest(Configure.java:93)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -57,12 +59,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- titletest -->
-        <test-method signature="logotest()[pri:2, instance:test.Configure@2bbf180e]" started-at="2020-08-16T15:36:44 IST" name="logotest" finished-at="2020-08-16T15:36:45 IST" duration-ms="216" status="PASS">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- logotest -->
-        <test-method is-config="true" signature="close()[pri:0, instance:test.Configure@2bbf180e]" started-at="2020-08-16T15:36:45 IST" name="close" finished-at="2020-08-16T15:36:45 IST" duration-ms="785" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:test.Configure@27ae2fd0]" started-at="2020-08-18T11:41:11 IST" name="close" finished-at="2020-08-18T11:41:12 IST" duration-ms="1212" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

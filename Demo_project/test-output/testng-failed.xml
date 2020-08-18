@@ -5,7 +5,7 @@
     <classes>
       <class name="test.Configure">
         <methods>
-          <include name="titletest"/>
+          <include name="logotest"/>
           <include name="close"/>
           <include name="initilization"/>
         </methods>
