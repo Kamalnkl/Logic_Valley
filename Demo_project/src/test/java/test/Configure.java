@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -16,28 +17,27 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import junit.framework.AssertionFailedError;
 
 public class Configure {
 
 	public static WebDriver driver;
-	
+
 	public static ExtentHtmlReporter htmlreporter;
 	public static ExtentReports extentReport;
 	public static ExtentTest testCase;
-	
+
 
 
 	@BeforeTest
 	public void initilization() throws InterruptedException  {
-		htmlreporter = new ExtentHtmlReporter("extentReport.html");
-		extentReport =new ExtentReports();
-		extentReport.attachReporter(htmlreporter);
-		htmlreporter.config().setReportName("Automation Testing");
-
-		testCase=extentReport.createTest("Browser", "Browser initilization");		
-
-
+	
+		report();
 		
+		testCase=extentReport.createTest("Browser", "Browser initilization");		
+		//Commits
+
+
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\kamal\\Downloads\\chromedriver_83.exe");
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
@@ -48,57 +48,64 @@ public class Configure {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		
-		Thread.sleep(7000);
-		extentReport.flush();
-	}	
 
-//commits
+		Thread.sleep(7000);
+	
+	}	
+	
+
+	public void report() {
+		htmlreporter = new ExtentHtmlReporter("extentReport.html");
+		extentReport =new ExtentReports();
+		extentReport.attachReporter(htmlreporter);
+		htmlreporter.config().setReportName("Automation Testing");
+	}
 
 	@Test(priority=1)
 	public void titletest() {
 		testCase=extentReport.createTest("Title Test", "Check whether title is matched");
-		
-		
-	
-		try {
-			
-			String expectedtitle="A fresh approach to customer engagement";
-			String title=driver.getTitle();
-			System.out.println(title);
-			testCase.log(Status.INFO,"The Actual title is:"  +title);
 
-		Assert.assertEquals(expectedtitle, title);
-		testCase.log(Status.PASS,"Title is matched");
-		
-		
-		}catch(Exception e){
+		String expectedtitle="A fresh approach to customer engagement";
+		String title=driver.getTitle();
+		System.out.println("Passed" +title);
+		testCase.log(Status.INFO,"The Actual title is:"  +title);
+
+		try {
+
+			Assert.assertEquals(expectedtitle, title);
+			testCase.log(Status.PASS,"Title is matched");
+
+		}catch(AssertionFailedError e){
+			System.out.println("Failed"+e.getMessage());
 			testCase.log(Status.FAIL,"Title is NOT matched"+e.getMessage());
 		}
-		extentReport.flush();
+		
 	}
 
 
 	@Test(priority=2)
 	public void logotest() {
 		testCase=extentReport.createTest("Logo Test", "Check whether Logo is available");
-		
-		boolean logo=driver.findElement(By.xpath("//a[@class='logo logo-fworks']")).isDisplayed();	
-		
-try {
-	Assert.assertTrue(logo, "The logo is displayed");
 
-		testCase.log(Status.PASS,"Logo is Displayed");
-		
-}catch(Exception e){
-	testCase.log(Status.FAIL,"Logo is NOT Displayed");
-}
-		extentReport.flush();
+		boolean logo=driver.findElement(By.xpath("//a[@class='logo logo-fworks']")).isDisplayed();	
+
+		try {
+			Assert.assertFalse(logo, "The logo is displayed");
+			System.out.println("Passed");
+			testCase.log(Status.PASS,"Logo is Displayed");
+
+		}catch(AssertionFailedError e){
+			System.out.println("Failed"+e.getMessage());
+			testCase.log(Status.FAIL,"Logo is NOT Displayed");
+		}
+	
 
 	}
 
 	@AfterTest
 	public void close() {
+		extentReport.flush();
+
 		driver.quit();
 	}
 
