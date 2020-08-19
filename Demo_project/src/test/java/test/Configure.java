@@ -52,7 +52,7 @@ public class Configure {
 		Thread.sleep(7000);
 	
 	}
-
+//commits
 	public void report() {
 		htmlreporter = new ExtentHtmlReporter("extentReport.html");
 		extentReport =new ExtentReports();
