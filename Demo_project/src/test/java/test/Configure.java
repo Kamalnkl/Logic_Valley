@@ -64,7 +64,7 @@ public class Configure {
 	public void titletest() {
 		testCase=extentReport.createTest("Title Test", "Check whether title is matched");
 
-		String expectedtitle="A fresh approach to customer engagement";
+		String expectedtitle="A fresh approach to custome engagement";
 		String title=driver.getTitle();
 		System.out.println("Passed" +title);
 		testCase.log(Status.INFO,"The Actual title is:"  +title);
