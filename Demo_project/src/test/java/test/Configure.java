@@ -35,7 +35,7 @@ public class Configure {
 		report();
 		
 		testCase=extentReport.createTest("Browser", "Browser initilization");		
-		//Commits
+		
 
 
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\kamal\\Downloads\\chromedriver_83.exe");
@@ -75,7 +75,7 @@ public class Configure {
 			Assert.assertEquals(expectedtitle, title);
 			testCase.log(Status.PASS,"Title is matched");
 
-		}catch(AssertionFailedError e){
+		}catch(AssertionError e){
 			System.out.println("Failed"+e.getMessage());
 			testCase.log(Status.FAIL,"Title is NOT matched"+e.getMessage());
 		}
@@ -88,18 +88,19 @@ public class Configure {
 		testCase=extentReport.createTest("Logo Test", "Check whether Logo is available");
 
 		boolean logo=driver.findElement(By.xpath("//a[@class='logo logo-fworks']")).isDisplayed();	
-
+	
 		try {
-			Assert.assertFalse(logo, "The logo is displayed");
+			Assert.assertEquals(logo, true);
 			System.out.println("Passed");
 			testCase.log(Status.PASS,"Logo is Displayed");
 
-		}catch(AssertionFailedError e){
+		}catch(AssertionError e){
+			e.printStackTrace();
 			System.out.println("Failed"+e.getMessage());
-			testCase.log(Status.FAIL,"Logo is NOT Displayed");
+			testCase.log(Status.FAIL, "The Expected and Actual Result are NotEqual:"+"  "+ e.getMessage());
 		}
 	
-//
+
 	}
 
 	@AfterTest
