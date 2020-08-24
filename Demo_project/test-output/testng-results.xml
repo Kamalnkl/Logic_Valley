@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-08-19T11:45:20 IST" name="Default suite" finished-at="2020-08-19T11:45:56 IST" duration-ms="36083">
+  <suite started-at="2020-08-19T15:28:56 IST" name="Default suite" finished-at="2020-08-19T15:30:01 IST" duration-ms="65212">
     <groups>
     </groups>
-    <test started-at="2020-08-19T11:45:20 IST" name="Default test" finished-at="2020-08-19T11:45:56 IST" duration-ms="36083">
+    <test started-at="2020-08-19T15:28:56 IST" name="Default test" finished-at="2020-08-19T15:30:01 IST" duration-ms="65212">
       <class name="test.Configure">
-        <test-method is-config="true" signature="initilization()[pri:0, instance:test.Configure@65d6b83b]" started-at="2020-08-19T11:45:20 IST" name="initilization" finished-at="2020-08-19T11:45:55 IST" duration-ms="35097" status="PASS">
+        <test-method is-config="true" signature="initilization()[pri:0, instance:test.Configure@65d6b83b]" started-at="2020-08-19T15:28:56 IST" name="initilization" finished-at="2020-08-19T15:29:57 IST" duration-ms="60575" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilization -->
-        <test-method signature="titletest()[pri:1, instance:test.Configure@65d6b83b]" started-at="2020-08-19T11:45:55 IST" name="titletest" finished-at="2020-08-19T11:45:55 IST" duration-ms="21" status="PASS">
+        <test-method signature="titletest()[pri:1, instance:test.Configure@65d6b83b]" started-at="2020-08-19T15:29:57 IST" name="titletest" finished-at="2020-08-19T15:29:57 IST" duration-ms="58" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- titletest -->
-        <test-method signature="logotest()[pri:2, instance:test.Configure@65d6b83b]" started-at="2020-08-19T11:45:55 IST" name="logotest" finished-at="2020-08-19T11:45:55 IST" duration-ms="49" status="PASS">
+        <test-method signature="logotest()[pri:2, instance:test.Configure@65d6b83b]" started-at="2020-08-19T15:29:57 IST" name="logotest" finished-at="2020-08-19T15:29:57 IST" duration-ms="89" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logotest -->
-        <test-method is-config="true" signature="close()[pri:0, instance:test.Configure@65d6b83b]" started-at="2020-08-19T11:45:55 IST" name="close" finished-at="2020-08-19T11:45:56 IST" duration-ms="900" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:test.Configure@65d6b83b]" started-at="2020-08-19T15:29:57 IST" name="close" finished-at="2020-08-19T15:30:01 IST" duration-ms="4330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
