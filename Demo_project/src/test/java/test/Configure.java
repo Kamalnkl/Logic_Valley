@@ -20,7 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.AssertionFailedError;
 
 public class Configure {
-
+//
 	public static WebDriver driver;
 
 	public static ExtentHtmlReporter htmlreporter;
